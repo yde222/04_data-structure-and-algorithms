@@ -8,22 +8,24 @@ public class Practice1 {
     public String solution(String input) {
 
         Stack<Character> stack = new Stack<>();
-        for(char c : input.toCharArray()) {
-            if(c == '(') {
-                // 여는 괄호인 경우 stack에 push
-                stack.push(c);
+
+        for (int i = 0;  i < input.length(); i++) {
+
+            char ch = input.charAt(i);
+
+            if (ch == '(') {
+                stack.push(ch);
+            } else if (stack.isEmpty()) {
+                return "NO";
             } else {
-                // 스택이 비어서 괄호를 꺼낼 수 없다면 여는 괄호가 부족해서 짝이 안 맞는 상황
-                if(stack.isEmpty()) return "NO";
-                // 닫는 괄호인 경우 stack에서 pop
                 stack.pop();
             }
         }
-
-        // 모든 문자에 대해서 처리 했는데 스택에 여는 괄호가 남아있다는 것은 닫는 괄호가 부족해서 짝이 안 맞는 상황
-        if(!stack.isEmpty()) return "NO";
-
-        return "YES";
+        if (stack.isEmpty()) {
+            return "YES";
+        } else {
+            return "NO";
+        }
     }
 
 }
