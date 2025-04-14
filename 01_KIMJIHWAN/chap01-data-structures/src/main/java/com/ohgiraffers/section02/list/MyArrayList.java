@@ -9,6 +9,7 @@ public class MyArrayList<T> {
     public MyArrayList() {
         data = (T[]) new Object[DEFAULT_CAPACITY];
         size = 0;
+        // ++ **"나중에 T가 뭔진 몰라도 Object로 만들고 나중에 T로 쓰자!"**는 의도입니다
     }
 
     @SuppressWarnings("unchecked")
