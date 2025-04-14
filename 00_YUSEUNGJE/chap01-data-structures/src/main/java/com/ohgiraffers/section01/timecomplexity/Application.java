@@ -11,6 +11,7 @@ public class Application {
         System.out.println(getFirst(arr));
         System.out.println(binarySearch(arr, 1));
         System.out.println(Arrays.toString(reverse(arr)));
+        System.out.println(finbonacci(10));
     }
 
     /* 상수 시간  O(1) */
@@ -58,8 +59,6 @@ public class Application {
         if(n <= 1) {
             return n;
         }
-
         return finbonacci(n - 1) + finbonacci(n - 2);
-
     }
 }
