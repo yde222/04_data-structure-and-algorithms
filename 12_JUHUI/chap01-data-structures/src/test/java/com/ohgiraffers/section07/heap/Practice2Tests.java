@@ -1,12 +1,18 @@
 package com.ohgiraffers.section07.heap;
 
-import com.ohgiraffers.section03.stack.Practice2;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
+
 /* 보석도둑 - 백준(1202) */
 class Practice2Tests {
 
@@ -34,7 +40,21 @@ class Practice2Tests {
 
     static Stream<Arguments> provideSource() {
         return Stream.of(
+                arguments(input1, input1),
+                arguments(input2, output2)
+        );
+    }
 
-        )
+    @BeforeEach
+    void setUp() {
+        practice2 = new Practice2();
+    }
+
+    @DisplayName("보석 도둑 테스트")
+    @ParameterizedTest
+    @MethodSource("provideSource")
+    void testSolution(String input, long output) {
+        long result = practice2.solution(input);
+        Assertions.assertEquals(output, result);
     }
 }

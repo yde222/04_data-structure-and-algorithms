@@ -1,7 +1,5 @@
 package com.ohgiraffers.section07.heap;
 
-import com.ohgiraffers.section05.deque.Practice1;
-import com.sun.jdi.connect.Connector;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
