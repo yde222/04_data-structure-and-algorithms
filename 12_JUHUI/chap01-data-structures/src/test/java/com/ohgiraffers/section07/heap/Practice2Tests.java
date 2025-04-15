@@ -34,7 +34,7 @@ class Practice2Tests {
 
     static Stream<Arguments> provideSource() {
         return Stream.of(
-                
+
         )
     }
 }
