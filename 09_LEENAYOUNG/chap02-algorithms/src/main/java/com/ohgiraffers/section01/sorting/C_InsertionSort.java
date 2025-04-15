@@ -21,9 +21,8 @@ public class C_InsertionSort {
                 if(arr[j] > temp) arr[j + 1] = arr[j];
                 else break;
             }
-            // 반복문을 바져나왔다는 것은 적절한 삽입 위치를 찾았다는 의미이므로 temp를 삽입한다.
+            // 반복문을 빠져나왔다는 것은 적절한 삽입 위치를 찾았다는 의미이므로 temp를 삽입한다.
             arr[j + 1] = temp;
-
         }
     }
 }
