@@ -83,7 +83,7 @@ public class C_ShortestPath {
                 int cy = node.y + dirY[i];
 
                 /* 좌표가 전체 범위를 넘어간다면, 확인이 불필요하므로 다음 방향을 확인 */
-                if (cx < 0 || cy < 0 || cx > N || cy > M) continue;
+                if (cx < 0 || cy < 0 || cx >= N || cy >= M) continue;
                 /* 방문 했던 좌표이거나 벽이면 확인이 불필요하므로 다음 방향을 확인 */
                 if (visit[cx][cy] || map[cx][cy] == 0) continue;
 
