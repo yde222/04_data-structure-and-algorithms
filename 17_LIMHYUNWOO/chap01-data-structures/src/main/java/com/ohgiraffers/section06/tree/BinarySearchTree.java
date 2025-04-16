@@ -162,18 +162,20 @@ public class BinarySearchTree<T extends Comparable<T>> {
         bst.insert(80);
 
         System.out.println("전위 순회 : " + bst.preOrder());
-        System.out.println("중위 순회 : " + bst.inOrder());
-        System.out.println("후위 순회 : " + bst.postOrder());
+//        System.out.println("중위 순회 : " + bst.inOrder());
+//        System.out.println("후위 순회 : " + bst.postOrder());
 
         // 검색
-        System.out.println("40 검색 : " + bst.search(40));
-        System.out.println("90 검색 : " + bst.search(90));
+//        System.out.println("40 검색 : " + bst.search(40));
+//        System.out.println("90 검색 : " + bst.search(90));
 
         // 삭제
-        bst.delete(20);
-        System.out.println("삭제 후 중위 순회 : " + bst.inOrder());
-        bst.delete(50);
-        System.out.println("삭제 후 중위 순회 : " + bst.inOrder());
+//        bst.delete(20);
+//        System.out.println("삭제 후 중위 순회 : " + bst.inOrder());
+//        bst.delete(50);
+//        System.out.println("삭제 후 중위 순회 : " + bst.inOrder());
+        bst.delete(70);
+        System.out.println("삭제 후 전위 순회 : " + bst.preOrder());
     }
 
 
