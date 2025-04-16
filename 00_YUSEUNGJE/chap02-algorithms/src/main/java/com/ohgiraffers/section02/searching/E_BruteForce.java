@@ -34,14 +34,34 @@ public class E_BruteForce {
         count = 0;
 
         // 깊이 0에서부터 bactrack 호출
-        bactrack(0, n, new ArrayList<>());
+        backtrack(0, n, new ArrayList<>());
 
         return count;
     }
     /* depth : 현재까지 선택된 정수의 개수*/
     /* n : 전체 정수 개수*/
-    private static void bactrack(int depth, int n, ArrayList<Integer> perm) {
-        
+    private static void backtrack(int depth, int n, ArrayList<Integer> perm) {
+
+        if(depth == n) {
+            /* 모든 정수를 한 번씩 사용한 것이므로 유효한 순열 1개를 찾았다는 의미 */
+            System.out.println("==== " + perm);  // 디버깅용 출력
+            count++;
+            return;
+        }
+
+        /*
+        * 조건문에 걸리지 않았다는 것은 사용하지 않은 정수를 하나씩 선택하여 재귀적으로
+        * 다음 정수를 선택해야 한다는 의미
+        * */
+        for (int i = 0; i < n; i++) {
+            if(!visited[i]) {  // 이미 선택한 정수는 건너뛰어 가지치기 한다.
+                visited[i] = true;
+                perm.add(nums[i]);  // 실제 정수 값을 순열에 추가
+                backtrack(depth + 1, n, perm);
+                perm.remove(perm.size() - 1); // 백트래킹: 선택했던 정수의 사용 상태를 원상복구 및 순열에서 제거
+                visited[i] = false;
+            }
+        }
     }
 
 }
