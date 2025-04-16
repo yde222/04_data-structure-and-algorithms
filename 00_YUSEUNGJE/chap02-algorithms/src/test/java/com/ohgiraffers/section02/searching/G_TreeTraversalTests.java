@@ -8,51 +8,59 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class D_DFSBFSTests {
+class G_TreeTraversalTests {
 
-    static String input1, input2;
-    static String output1,output2;
+    private static String input1;
+    private static String output1;
 
     @BeforeAll
     public static void set() {
 
-        input1 = "4 5 1\n" + // 4개의 노드, 5개의 간선, 탐색의 시작
-                "1 2\n" +
-                "1 3\n" +
-                "1 4\n" +
-                "2 4\n" +
-                "3 4";
-        output1 = "1 2 4 3 \n" +
-                "1 2 3 4 ";
-        input2 = "5 5 3\n" +
-                "5 4\n" +
-                "5 2\n" +
-                "1 2\n" +
-                "3 4\n" +
-                "3 1";
-        output2 = "3 1 2 5 4 \n" +
-                "3 1 4 2 5 ";
+
+        /*
+         *     A
+         *   /   \
+         *   B    C
+         *  /    /  \
+         * D    E    F
+         *            \
+         *             G
+         * */
+
+        input1 = "7\n" +
+                "A B C\n" +
+                "B D .\n" +
+                "C E F\n" +
+                "E . .\n" +
+                "F . G\n" +
+                "D . .\n" +
+                "G . .";
+        output1 = "ABDCEFG\n" +
+                "DBAECFG\n" +
+                "DBEGFCA";
 
     }
 
     public static Stream<Arguments> provideSource() {
         return Stream.of(
-//                arguments(input1, output1),
-                arguments(input2, output2)
+                arguments(input1, output1)
         );
     }
-    @DisplayName("BFSDFS")
+
+    @DisplayName("tree2")
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
     @ParameterizedTest
     @MethodSource("provideSource")
-    public void BFSDFSTest(String input, String output) throws Exception {
-        String result = D_DFSBFS.solution(input);
+    public void treeTest(String input, String output) throws IOException {
+        String result = G_TreeTraversal.solution(input);
         Assertions.assertEquals(output, result);
     }
+
 }
