@@ -37,8 +37,10 @@ public class D_DFSBFS {
 
         sb.append("\n");
 
+        /*위의*/
 
-        visit = new boolean();
+        visit = new boolean[node+1];
+        bfs(start);
         return null;
     }
 
