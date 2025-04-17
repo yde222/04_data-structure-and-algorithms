@@ -12,11 +12,9 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class B_BFSTests {
-
     static String input1, input2, input3;
     static Integer output1,output2, output3;
 
@@ -66,13 +64,12 @@ class B_BFSTests {
         );
     }
 
-
     @DisplayName("bfs")
-    @Timeout(value=1000, unit= TimeUnit.MILLISECONDS)
+    @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
     @ParameterizedTest
     @MethodSource("provideSource")
     public void bfsTest(String input, Integer output) throws IOException {
-//        Integer result = B_BFS.solution(input);
+        //Integer result = B_BFS.solution(input);
         Integer result = B_BFS_2.solution(input);
         Assertions.assertEquals(output, result);
     }
