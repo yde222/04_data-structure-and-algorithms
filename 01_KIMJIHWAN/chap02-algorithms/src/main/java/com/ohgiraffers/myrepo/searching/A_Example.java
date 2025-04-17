@@ -1,9 +1,8 @@
-package com.ohgiraffers.section02.searching;
+package com.ohgiraffers.myrepo.searching;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class A_Example {
