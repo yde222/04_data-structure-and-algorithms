@@ -16,35 +16,32 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class C_TilingTests {
 
-    private static Integer input1, input2, input3;
-    private static Integer output1, output2, output3;
+    private static Integer input1, input2;
+    private static Integer output1, output2;
 
     @BeforeAll
-    public static void setUp() {
+    static void setUp() {
 
-        input1 = 18;
-        output1 = 4;
-        input2 = 4;
-        output2 = -1;
-        input3 = 6;
-        output3 = 2;
+        input1 = 2;
+        output1 = 2;
 
+        input2 = 9;
+        output2 = 55;
     }
 
-    public static Stream<Arguments> provideSource() {
+    static Stream<Arguments> provideSource() {
         return Stream.of(
                 arguments(input1, output1),
-                arguments(input2, output2),
-                arguments(input3, output3)
+                arguments(input2, output2)
         );
     }
 
-    @DisplayName("SugarDelivery")
+    @DisplayName("Tiling")
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
     @ParameterizedTest
     @MethodSource("provideSource")
-    public void sugarDeliveryTest(Integer input, Integer output) throws Exception {
-        Integer result = B_SugarDelivery.solution(input);
+    void tilingTest(Integer input, Integer output) throws Exception {
+        Integer result = C_Tiling.solution(input);
         Assertions.assertEquals(output, result);
     }
 
