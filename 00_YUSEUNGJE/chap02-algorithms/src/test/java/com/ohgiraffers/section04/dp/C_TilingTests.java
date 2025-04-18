@@ -43,6 +43,8 @@ class C_TilingTests {
     void tilingTest(Integer input, Integer output) throws Exception {
         Integer result = C_Tiling.solution(input);
         Assertions.assertEquals(output, result);
+
+        C_TilingTests cp = new C_TilingTests();
     }
 
 }
