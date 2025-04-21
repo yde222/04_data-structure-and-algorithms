@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /* 이진 트리
- * 각 노드가 최대 두 개의 자식을 가지며 왼쪽 자식과 오른쪽 자식으로 구분 된다.
- *
- * 이진 탐색 트리
- * 이진 트리의 구조를 가지면서 추가로 왼쪽 서브트리의 모든 노드는 현재 노드 값 보다 작고,
- * 오른쪽 서브 트리의 모든 노드는 현재 노드 값보다 크다는 규칙(정렬 속성)을 만족한다.
- *
- * => 제한 된 자식의 수와 정렬 속성 덕분에 트리 순회, 탐색, 삽입, 삭제 등의 알고리즘을
- * 보다 효율적이고 단순하게 구현할 수 있다.
- * */
+* 각 노드가 최대 두 개의 자식을 가지며 왼쪽 자식과 오른쪽 자식으로 구분 된다.
+*
+* 이진 탐색 트리
+* 이진 트리의 구조를 가지면서 추가로 왼쪽 서브트리의 모든 노드는 현재 노드 값 보다 작고,
+* 오른쪽 서브 트리의 모든 노드는 현재 노드 값보다 크다는 규칙(정렬 속성)을 만족한다.
+*
+* => 제한 된 자식의 수와 정렬 속성 덕분에 트리 순회, 탐색, 삽입, 삭제 등의 알고리즘을
+* 보다 효율적이고 단순하게 구현할 수 있다.
+* */
 public class BinarySearchTree<T extends Comparable<T>> {
 
     static class Node<T> {
@@ -161,21 +161,30 @@ public class BinarySearchTree<T extends Comparable<T>> {
         bst.insert(60);
         bst.insert(80);
 
-        System.out.println("전위 순회 : " + bst.preOrder());
-        System.out.println("중위 순회 : " + bst.inOrder());
-        System.out.println("후위 순회 : " + bst.postOrder());
+//        System.out.println("전위 순회 : " + bst.preOrder());
+//        System.out.println("중위 순회 : " + bst.inOrder());
+//        System.out.println("후위 순회 : " + bst.postOrder());
 
         // 검색
-        System.out.println("40 검색 : " + bst.search(40));
-        System.out.println("90 검색 : " + bst.search(90));
+//        System.out.println("40 검색 : " + bst.search(40));
+//        System.out.println("90 검색 : " + bst.search(90));
 
         // 삭제
-        bst.delete(20);
-        System.out.println("삭제 후 중위 순회 : " + bst.inOrder());
-        bst.delete(50);
-        System.out.println("삭제 후 중위 순회 : " + bst.inOrder());
+        /* 트리 구조
+         *          50
+         *         /  \
+         *       30    70
+         *      /  \   / \
+         *    20   40 60  80
+         */
+        //   [20, 30, 40, 50, 60, 70, 80]
+
+//        bst.delete(20);
+//        System.out.println("삭제 후 중위 순회 : " + bst.inOrder());
+//        bst.delete(50);
+//        System.out.println("삭제 후 중위 순회 : " + bst.inOrder());
+//    }
+
+
     }
-
-
-
 }

@@ -12,8 +12,8 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 /* 풍선 터트리기 - 백준(2346)
- * https://www.acmicpc.net/problem/2346
- * */
+* https://www.acmicpc.net/problem/2346
+* */
 class Practice1Tests {
     Practice1 practice1;
 

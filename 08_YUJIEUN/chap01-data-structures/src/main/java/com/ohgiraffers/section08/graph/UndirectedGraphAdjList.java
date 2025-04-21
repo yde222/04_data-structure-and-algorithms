@@ -39,9 +39,9 @@ public class UndirectedGraphAdjList {
     }
 
     /*
-     * u  => v
-     * v  => u
-     * */
+    * u  => v
+    * v  => u
+    * */
 
     /* 무방향 간선을 제거 */
     public void removeEdge(int u, int v) {
